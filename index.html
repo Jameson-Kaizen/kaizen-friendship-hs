@@ -94,6 +94,19 @@
   .bartrack{height:9px;border-radius:999px;background:var(--soft);overflow:hidden;}
   .barfill{height:100%;border-radius:999px;transition:width .6s ease;}
   .blendnote{font-size:14px;color:var(--muted);margin:4px 0 0;}
+  .patterns-h{font-size:13px;font-weight:800;color:var(--ink);text-transform:uppercase;letter-spacing:.05em;margin:22px 0 4px;padding-top:16px;border-top:2px solid var(--line);}
+  .patterns-sub{font-size:13.5px;color:var(--muted);margin:0 0 12px;}
+  .tabs{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 14px;}
+  .tab{background:var(--soft);border:1.5px solid var(--line);border-radius:999px;padding:8px 15px;font-size:13.5px;font-weight:700;color:var(--gd);cursor:pointer;font-family:inherit;transition:background .1s,border-color .1s,color .1s;}
+  .tab:hover{background:#e6f1ea;border-color:var(--g);}
+  .tab.active{background:var(--g);color:#fff;border-color:var(--gd);}
+  .tab .pct{font-weight:800;opacity:.75;margin-left:6px;font-size:12.5px;}
+  .tab-quote{font-size:15px;font-style:italic;color:var(--muted);margin:0 0 8px;}
+  .tab-thesis{font-size:16px;color:var(--gd);font-weight:700;margin:0 0 10px;}
+  .tab-def{font-size:15.5px;margin:0 0 12px;}
+  .attrs{margin:0 0 16px;padding:0;list-style:none;}
+  .attrs li{position:relative;padding:0 0 0 20px;margin:0 0 7px;font-size:14.5px;}
+  .attrs li:before{content:"";position:absolute;left:2px;top:8px;width:7px;height:7px;border-radius:50%;background:var(--g);}
   .ai{margin:18px 0;background:var(--soft);border:1px solid var(--line);border-radius:14px;padding:16px 18px;}
   .ai-head{font-size:12px;font-weight:700;color:var(--gd);text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px;}
   .ai-body{font-size:15.5px;white-space:pre-line;}
@@ -158,15 +171,16 @@
   <section id="results" class="card" hidden>
     <div class="r-tag">Your teen's Friendship Wiring</div>
     <h1 id="r-name"></h1>
-    <p class="sub" id="r-sub"></p>
-    <div class="ef" id="r-ef"></div>
     <div class="bars" id="r-bars"></div>
     <p class="blendnote" id="r-blend"></p>
     <div class="ai" id="ai" hidden>
       <div class="ai-head" id="ai-head">A personalised read</div>
       <div class="ai-body" id="ai-body"></div>
     </div>
-    <div class="body" id="r-body"></div>
+    <div class="patterns-h">Explore your top wirings</div>
+    <p class="patterns-sub" id="r-patterns-sub"></p>
+    <div class="tabs" id="r-tabs" role="tablist"></div>
+    <div class="body" id="r-panel"></div>
     <div class="cta">
       <p>Want help supporting your teen with this? Book a free 30 minute consult. We will look at their wiring with you, hear what is going on, and tell you honestly whether we think we are a fit.</p>
       <a class="btn" id="r-book" href="#" target="_blank" rel="noopener">Explore Coaching</a>
@@ -201,6 +215,13 @@
     {slug:"the-full-volume-friend",name:"The Full-Volume Friend",ef:"self-monitoring",thesis:"{C} shows up at 100%. The presence is the gift. It's also what trips them up in the room.",body:"Full-Volume Friends don't do small. They walk in talking, they bring the energy, they're the first one to join the game and the last one to leave the conversation. They're often the teen the teacher mentions as \"very enthusiastic,\" in that specific tone that's part compliment and part something else.\nWhat they don't always do, especially in motion, is catch the signal the room is sending back. Other teens pulling away. A friend going quiet. The shift from \"we're playing\" to \"we're done playing.\" This isn't because they don't care. They care a lot. The brain's self-monitoring skill, the live feedback loop that tracks how you're landing while you're landing, is the part that's still being built.\nWhat this looks like\n{C} is the loudest in the group, sometimes by a lot. They join in fast, sometimes before they understand the game or read the room. They don't always notice when peers pull back, change topic, or go quiet. You've gotten \"she's a lot\" feedback from other parents, teachers, or coaches. Coaching them in the moment (\"hey, dial it down\") works for about 90 seconds and then the volume comes back. They genuinely don't seem to track when something they did landed wrong.\nThis is the archetype parents most often feel conflicted about. You don't want to crush a teen whose enthusiasm is part of who they are. You also don't want them to keep walking into rooms that close in on them. Both instincts are right.\nThe strength and the cost\nThe strength is presence. Full-Volume Friends aren't watching life happen. They're in it. They're often the most generous, openhearted teens in the room. They form friendships fast and draw other teens toward them when the chemistry is right.\nThe cost is calibration. The same energy that makes them magnetic also makes them hard to be around in 30-minute stretches. Without the self-monitoring skill, they can wear out friendships they were never trying to wear out. As teens get older, the social world gets less forgiving of a teen who doesn't read the room. The other cost is internal. Full-Volume Friends often don't know why peers pull away.\nThe executive function skill underneath\nThe EF skill here is self-monitoring: the live feedback loop that lets you notice how you're showing up while you're showing up. Not after, when you've already lost the friend or gotten the look. During. It's not about being self-critical. It's about being present to feedback in real time. This is one of the most coachable EF skills. The interventions are specific, the practice loops are short, and teens can see the change fast.\nWhat often helps this week\n1. Stop using \"dial it down\" as the main feedback. It teaches volume control without teaching reading. Try \"what's the room doing right now?\" or \"where are everyone else's hands and eyes?\" The shift moves them from suppression to noticing.\n2. Run short replay loops. After a social moment, ask one specific question: \"What was your friend doing when you said that?\" Not as a gotcha. As practice. Watching themselves through someone else's eyes is the skill being built.\n3. Name the strength, then the friction. Once. \"I love how you go all in. I also notice some teens need you at a different volume than others. Let's figure out which teens need which version of you.\" Frame the calibration as a sophisticated skill, not a personality correction.\nWhat we'd work on together\nThe work for a Full-Volume Friend is specific. We'd build the reading-the-room skill in concrete, repeatable practice loops, not in lectures. We'd work on calibration, which version of you a given friend needs, without ever asking {C} to be a smaller version of themselves. And we'd give you the parent script for delivering feedback in a way that lands without crushing. This isn't therapy. It's executive function coaching for a self-monitoring skill that's eminently buildable.\nKaizen Education Services provides educational coaching. We are not medical or mental health professionals and our coaching is not a substitute for diagnosis, therapy, or medical care. If you have concerns about your child's mental health, please consult a qualified clinician."},
     {slug:"the-set-planner",name:"The Set Planner",ef:"cognitive flexibility",thesis:"{C} has a vision for how the day, the game, and the friendship are supposed to go. That clarity is a strength. It's the same thing that's getting them stuck.",body:"Set Planners walk into social situations with a picture in their head. The picture has details. It has rules. It has an outcome. When the picture and the room match, {C} is content, focused, and committed in a way other teens aren't. When the picture and the room don't match, it doesn't feel like a small thing to {C}. It feels like the floor moved.\nThis isn't stubbornness. It isn't being controlling. And it isn't a problem with your child. What you're seeing is a pattern. The brain's cognitive flexibility skill is still building. {C} can hold a plan in their head beautifully. Releasing it when the situation changes is the half that's still under construction.\nWhat this looks like\n{C} suggests the game, the rules, the roles, and the schedule, and stays patient as long as everyone follows the plan. When a friend changes the activity, {CP} first move is to argue, negotiate, or insist. They have a small number of close friends, often built around a specific shared activity (\"Liam, who I do Lego with on Tuesdays\"). A canceled or changed plan is a much bigger event than the change itself seems to warrant. After a social conflict, they want to talk through who was right and what should happen next, in detail.\nTeachers and coaches often describe Set Planners as mature, focused, or organized. Friends sometimes describe them as bossy or rigid when the plan changes. Both are true. {C} is being seen accurately from different angles.\nThe strength and the cost\nThe strength is structure. Set Planners bring something to friendship most teens don't: consistency, follow-through, real loyalty. They show up. They remember. They keep their commitments. In a peer culture that often runs on whim, this is rare and valuable.\nThe cost is flexibility. Other teens don't experience structure the way Set Planners do. The teen who insists on the plan can read as controlling, even when {C} is just trying to make the thing go well. Friendships built entirely around an activity can hold up beautifully until the activity changes, then fall apart fast. The other cost is internal. Set Planners feel real distress when the plan breaks. It's not a tantrum. It's their brain trying to make sense of a room that just stopped matching the picture.\nThe executive function skill underneath\nThe EF skill here is cognitive flexibility: the ability to shift gears when the situation shifts, to hold a plan loosely, to update based on new information without losing your footing. Flexibility isn't about not having plans. {CP} planning brain is an asset. Flexibility is the second layer: letting go of the plan when reality moves, and doing it without it costing the friendship. Set Planners often need explicit scaffolding, because the cost of inflexibility doesn't hit them in the moment in a way they can use.\nWhat often helps this week\n1. Co-build \"plan B\" in advance. Before any social event, get specific: \"If your friend wants to play something different, what's a way you could say yes?\" You're not killing the plan. You're widening it. Set Planners can hold two plans at once when they've thought about the second one ahead of time.\n2. Name flexibility as its own skill. \"Sticking to a plan when the room changes isn't a strength. Flexibility is. Both are skills. You already have one of them. Let's build the other.\" Watch what happens when they realize flexibility is also a kind of strength.\n3. Stop debating the rightness of the plan during a stuck moment. You can't logic them out of it while they're in it. Wait until the moment settles, then have the conversation about what would have helped.\nWhat we'd work on together\nThe work for a Set Planner is specific. We'd build the flexibility skill in concrete practice loops, not by attacking the plans, but by adding the second-half move: releasing the plan when needed. We'd work on the social cost the rigidity is creating and what {C} can do about it. And we'd give you parent scripts for the conversations that don't currently work. This isn't therapy. It's executive function coaching for a flexibility skill that is buildable.\nKaizen Education Services provides educational coaching. We are not medical or mental health professionals and our coaching is not a substitute for diagnosis, therapy, or medical care. If you have concerns about your child's mental health, please consult a qualified clinician."}
   ];
+  // Per-archetype definition + hallmark signs, shown at the top of each results tab.
+  var ARCHX={
+    "the-watcher":{def:"The Watcher is wired to observe before joining. They hang back at the edge of a group, reading the room and sizing up the scene before stepping in. It can look like shyness, but it is careful social processing, and it usually comes with real depth and loyalty once they are in.",attrs:["Hangs back and observes before joining a group","Takes time to warm up to new people or settings","Notices social details other kids miss","Tends toward a few deep friendships rather than many"]},
+    "the-big-feeler":{def:"The Big Feeler experiences friendship at full intensity. Connection, exclusion, a fallout, all of it lands hard and fast. Their empathy and loyalty are a real gift, but big emotions can flood the moment before they can manage them. This is emotional regulation still catching up to the size of the feelings.",attrs:["Feels friendship highs and lows intensely","Deeply loyal and empathetic","Can be flooded by a fallout or feeling left out","Reactions that come on fast and strong"]},
+    "the-full-volume-friend":{def:"The Full-Volume Friend brings big energy to every interaction. Warm, enthusiastic, and impossible to miss, they light up a room, but that same volume can overshoot the moment and miss when to dial it down. This is self-monitoring, the ability to read your own impact in real time.",attrs:["Big, warm, high-energy presence","Enthusiastic and quick to connect","Can miss when to lower the volume or give space","Sometimes overshoots a joke or a moment"]},
+    "the-set-planner":{def:"The Set Planner likes friendship with structure: known people, clear plans, familiar routines. They are dependable and steady, but unexpected changes to the social plan can feel genuinely hard. This is cognitive flexibility, the skill of adapting when the situation shifts.",attrs:["Prefers familiar friends and predictable plans","Dependable and steady in relationships","Thrown by last-minute social changes","Likes knowing who, what, and when in advance"]}
+  };
   var QUESTIONS=[
     {text:"On a typical weekend evening, {C} is most likely…",options:["Home alone or with one specific friend, doing something low-key","Either deeply in their feelings about a friend situation or pulled into a big one","Out. With a group, at a thing, sometimes more than one thing in a night.","Doing something they've planned in detail (a movie night, a specific gaming session, a study group)"]},
     {text:"When you watch {C} with a group of peers (at a game, a school event, around the house), they're usually…",options:["On the edge of the group, observing, talking less than the others","The emotional barometer. Their mood seems to set the tone for the group.","The center of the noise. Talking, moving, often the loudest one.","Steering the group toward whatever they had in mind"]},
@@ -294,8 +315,6 @@
     var p=ARCH[LAST.primary], s=ARCH[LAST.secondary];
     var who=childName||("your "+CW);
     $("r-name").textContent=p.name;
-    $("r-sub").textContent=cap(p.thesis);
-    $("r-ef").textContent="Connects to the executive function skill of "+p.ef+".";
     var bars=$("r-bars"); bars.innerHTML="";
     var order=LAST.counts.map(function(c,i){return {i:i,c:c,pct:LAST.pct[i]};}).sort(function(a,b){return b.c-a.c||a.i-b.i;});
     order.forEach(function(o){
@@ -310,9 +329,46 @@
     $("r-blend").textContent = (LAST.counts[LAST.secondary]>0)
       ? ("Most "+CW+"s are a blend. "+(childName?childName:("Your "+CW))+" leans mainly "+bare(p.name)+", with a strong "+bare(s.name)+" streak.")
       : "";
-    $("r-body").innerHTML=renderBody(p.body);
+    buildPatternTabs();
     var bk=$("r-book"); bk.href=BOOKING_URL;
     bk.addEventListener("click",function(){ track("cta_click",{location:"results"}); if(window.fbq) fbq("trackCustom","BookingClick"); });
+  }
+
+  function topThree(){
+    var arr=LAST.totals||LAST.counts;
+    return arr.map(function(t,i){return {i:i,t:t,pct:LAST.pct[i]};})
+      .sort(function(a,b){return b.t-a.t||a.i-b.i;})
+      .filter(function(o){ return o.i===LAST.primary || o.t>0; })
+      .slice(0,3);
+  }
+  function buildPatternTabs(){
+    var top=topThree(); var tabs=$("r-tabs"); tabs.innerHTML="";
+    var sub=$("r-patterns-sub"); if(sub) sub.textContent=(top.length>1)?"Most kids are a blend. Tap through your top wirings to read each one.":"";
+    top.forEach(function(o,k){
+      var b=document.createElement("button"); b.type="button"; b.className="tab"+(k===0?" active":"");
+      b.setAttribute("role","tab"); b.setAttribute("aria-selected",k===0?"true":"false");
+      b.innerHTML=ARCH[o.i].name+'<span class="pct">'+o.pct+'%</span>';
+      b.addEventListener("click",function(){ selectPattern(o.i,b); track("pattern_tab",{archetype:ARCH[o.i].slug}); });
+      tabs.appendChild(b);
+    });
+    if(top.length) selectPattern(top[0].i, tabs.firstChild);
+  }
+  function selectPattern(i,btn){
+    var kids=$("r-tabs").children;
+    [].forEach.call(kids,function(c){ c.classList.remove("active"); c.setAttribute("aria-selected","false"); });
+    if(btn){ btn.classList.add("active"); btn.setAttribute("aria-selected","true"); }
+    var a=ARCH[i]; var subtitle=a.quote||a.pattern||"";
+    var html="";
+    if(subtitle) html+='<p class="tab-quote">'+tok(subtitle)+'</p>';
+    if(a.thesis) html+='<p class="tab-thesis">'+cap(a.thesis)+'</p>';
+    var x=(typeof ARCHX!=="undefined" && ARCHX[a.slug]) ? ARCHX[a.slug] : null;
+    if(x && x.def) html+='<p class="tab-def">'+tok(x.def)+'</p>';
+    if(x && x.attrs && x.attrs.length){ html+='<div class="sec-h">Common signs</div><ul class="attrs">';
+      x.attrs.forEach(function(at){ html+='<li>'+tok(at)+'</li>'; }); html+='</ul>'; }
+    if(a.driver) html+='<div class="driver"><b>What\'s underneath:</b> '+tok(a.driver)+'</div>';
+    else if(a.ef) html+='<div class="driver"><b>Connects to:</b> the executive function skill of '+tok(a.ef)+'.</div>';
+    if(a.body) html+=renderBody(a.body);
+    $("r-panel").innerHTML=html;
   }
 
   function emailValid(v){ return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v); }
