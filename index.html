@@ -306,8 +306,9 @@
         '<div class="bartrack"><div class="barfill" style="width:'+o.pct+'%;background:'+color+'"></div></div>';
       bars.appendChild(row);
     });
+    var bare=function(n){ return n.replace(/^The /,""); };
     $("r-blend").textContent = (LAST.counts[LAST.secondary]>0)
-      ? ("Most teens are a blend. "+(childName||("Your "+CW)).replace(/^your/,"Your")+" leans mainly "+p.name+", with a strong "+s.name+" streak.")
+      ? ("Most "+CW+"s are a blend. "+(childName?childName:("Your "+CW))+" leans mainly "+bare(p.name)+", with a strong "+bare(s.name)+" streak.")
       : "";
     $("r-body").innerHTML=renderBody(p.body);
     var bk=$("r-book"); bk.href=BOOKING_URL;
